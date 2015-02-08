@@ -1,0 +1,23 @@
+#!/bin/bash -xe
+
+if [ "$1" == "" ]; then
+	echo "you have to specify a target"
+	exit
+fi
+
+NAME=$1
+
+SCRIPT=${BASH_SOURCE[0]}
+ORIG_SCRIPT=$(readlink $SCRIPT)
+SRC_FOLDER=$(dirname $ORIG_SCRIPT)
+
+# echo $ORIG_SCRIPT
+# echo $(basename $ORIG_SCRIPT)
+
+cp -r "$SRC_FOLDER/post" "$NAME"
+cd $NAME
+
+rename -v post $NAME *
+
+find ./ -type f -readable -writable -exec sed -i "s/post/$NAME/g" {} \;
+find ./ -type f -readable -writable -exec sed -i "s/Post/${NAME^}/g" {} \;
