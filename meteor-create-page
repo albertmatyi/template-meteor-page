@@ -17,12 +17,14 @@ SRC_FOLDER=$(dirname $ORIG_SCRIPT)
 cp -r "$SRC_FOLDER/post" "$NAME"
 cd $NAME
 
-rename -v post $NAME *
+	rename -v post $NAME *
 
-find ./ -type f -readable -writable -exec sed -i "s/post/$NAME/g" {} \;
-find ./ -type f -readable -writable -exec sed -i "s/Post/${NAME^}/g" {} \;
+	find ./ -type f -readable -writable -exec sed -i "s/post/$NAME/g" {} \;
+	find ./ -type f -readable -writable -exec sed -i "s/Post/${NAME^}/g" {} \;
+
+cd ../
 
 if [ -f ../style/main.less ]; then
-	echo "\n@import \"/client/views/${NAME}s/${NAME}s.import.less\";" >> "../style/main.less"
+	echo -e "\n@import \"/client/views/${NAME}s/${NAME}s.import.less\";" >> "../style/main.less"
 fi
 
