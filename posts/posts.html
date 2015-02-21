@@ -1,4 +1,5 @@
 <template name="posts">
+	Stuff to do in {{postData}} with a {{i18n 'post.title'}}
 	{{#each posts}}
 		{{> post}}
 	{{/each}}
@@ -6,6 +7,6 @@
 
 <template name="post">
 	<div class="post">
-	    Stuff to do in {{postData}} with a {{i18n 'post.title'}}
+	    {{this}}
 	</div>
 </template>

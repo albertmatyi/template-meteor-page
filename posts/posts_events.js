@@ -1,6 +1,6 @@
 'use strict';
 
-Template.post.events({
+Template.posts.events({
 	'click .post': function() {
 		console.log('handle');
 		alert('hey');
