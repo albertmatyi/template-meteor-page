@@ -25,6 +25,6 @@ cd $NAME
 cd ../
 
 if [ -f ../style/main.less ]; then
-	echo -e "\n@import \"/client/views/${NAME}s/${NAME}s.import.less\";" >> "../style/main.less"
+	echo -e "\n@import \"/client/views/${NAME}/${NAME}.import.less\";" >> "../style/main.less"
 fi
 
