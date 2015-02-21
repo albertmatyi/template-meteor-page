@@ -1,8 +1,7 @@
-App.component('i18n.translations').expose({
-	en: {
-		post: {
-			title: 'wroom'
-		},
-		'post.title': 'broom'
+App.component('i18n.translations.en.posts').expose({
+	title: 'wroom',
+	'some.title': 'broom',
+	other: {
+		title: 'shroom'
 	}
 });
