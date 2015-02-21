@@ -1,0 +1,11 @@
+<template name="posts">
+	{{#each posts}}
+		{{> post}}
+	{{/each}}
+</template>
+
+<template name="post">
+	<div class="post">
+	    Stuff to do in {{postData}} with a {{i18n 'post.title'}}
+	</div>
+</template>
